@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    * {
+      transition: all .8s ease;
+    }
+    *:hover {
+      transition: all .2s ease;
+    }
+      @keyframes boxmove {
+        0% {left: 20px;}
+        30% {background: green;top: 40px;}
+        50% {left: 200px;background: blue;border-radius: 50%;top: 15px;}
+        70% {background: green;top: 40px;}
+        100% {left: 20px;}
+      }
+      .box {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        width: 200px;
+        height: 200px;
+        background: red;
+        animation: boxmove 3s infinite;
+        transition: all .8s ease;
+      }
+      .box:hover {
+        transform: scale(1.3);
+        transition: all .1s ease;
+      }
+      .btn {
+        width: 150px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        font-size: 30px;
+        background: black;
+        color: white;
+        border-radius: 10px;
+        position: absolute;
+        left: calc(50% - 75px);
+        top: calc(50% - 35px);
+      }
+      .btn-c1 {
+        width:450px;
+        height: 270px;
+        /* background: rgba(255, 0, 0, 0.5); */
+        position: relative;
+        border-radius: 50%;
+        display: block;
+      }
+      .btn-c2 {
+        width:650px;
+        height: 470px;
+        /* background: rgba(255, 0, 0, 0.5); */
+        /* position: relative; */
+        display: block;
+        border-radius: 50%;
+      }
+      .btn-c2:hover .btn {
+        background: red;
+      }
+      .btn-c1:hover .btn {
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="btn-c1">
+      <div class="btn-c2">
+        <div class="btn">click</div>
+      </div>
+    </div>
+  </body>
+</html>
