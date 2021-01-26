@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style media="screen">
+    .box {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background: grey;
+      transition: all .2s;
+    }
+    .red {
+      background: red;
+    }
+    .blue {
+      background: blue;
+      position: absolute;
+      left: 300px;
+      top: 100px;
+    }
+    .blue.hidden {
+      top: -105px;
+    }
+    .black {
+      background: black;
+    }
+    .hidden {
+      opacity: 0;
+    }
+    .blocker {
+      display: none;
+    }
+    .rounder {
+      border-radius: 40px;
+      background-color: green;
+    }
+  </style>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+  	$(".orange, .blue").click(function(){
+  		$(".blue.hidden").removeClass("blocker");
+      setTimeout(function(){
+        $(".blue").toggleClass("hidden");
+      }, 1);
+      setTimeout(function(){
+        $(".blue.hidden").addClass("blocker");
+      }, 300);
+  	});
+    $(".red").click(function () {
+      if ($(".red").hasClass("rounder")) {
+        $(".orange").toggleClass("hidden");
+      }
+      $(this).toggleClass("rounder");
+    });
+  });
+
+  </script>
+  </head>
+  <body>
+    <div class="box red"></div>
+    <div class="box blue hidden blocker"></div>
+    <div class="box orange"></div>
+  </body>
+</html>
